@@ -11,8 +11,35 @@ private:
     int age;
     string color;
 public: 
-    Goat()                          { name = ""; age = 0; color = ""; }
-    // write three more constructors
+    //hope you dont mind i set the code in the way i am used to seeign as the original just looks odd to me.
+    //default constructor
+    Goat()  { 
+        name = ""; 
+        age = 0; 
+        color = ""; 
+    }
+
+    
+    //constructor for just name
+    Goat (string n) { 
+        name = n; 
+        age = 0; 
+        color = "";
+    }
+
+    //constuctor with name and age
+    Goat(string n, int a) {
+        name = n; 
+        age = a; 
+        color = "";
+    }
+
+    //contrsutor will all parameters
+    Goat(string n, int a, string c) {
+        name = n; 
+        age = a; 
+        color = c;
+    }
 
     // setters and getters
     void set_name(string n)         { name = n; };
@@ -23,6 +50,9 @@ public:
     string get_color() const        { return color; }
 
     // write overloaded < operator for the std::list
+    bool operator<(const Goat& other) const{
+        return name < other.name;
+    }
 };
 
 #endif
